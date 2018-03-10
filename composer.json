@@ -1,0 +1,38 @@
+{
+  "name": "anacreation/school-notification",
+  "type": "lib",
+  "authors": [
+	{
+	  "name": "Xavier Au",
+	  "email": "xavier.au@anacreation.com"
+	}
+  ],
+  "require": {
+	"php": ">=7.1.0",
+	"laravel/framework": "5.5.*",
+	"laravelcollective/html": "^5.4.0",
+	"nexmo/client": "^1.2",
+	"sendgrid/sendgrid": "~6.0",
+	"anacreation/school-core": "dev-master"
+  },
+  "autoload": {
+	"psr-4": {
+	  "Anacreation\\School\\Notification\\": "src/"
+	},
+	"classmap": [
+	  "src/database/seeds"
+	]
+  },
+  "extra": {
+	"laravel": {
+	  "providers": [
+		"Anacreation\\School\\Notification\\sSchoolNotificationServiceProvider",
+		"Collective\\Html\\HtmlServiceProvider"
+	  ],
+	  "aliases": {
+		"Form": "Collective\\Html\\FormFacade",
+		"Html": "Collective\\Html\\HtmlFacade"
+	  }
+	}
+  }
+}
