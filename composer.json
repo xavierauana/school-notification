@@ -26,7 +26,7 @@
   "extra": {
 	"laravel": {
 	  "providers": [
-		"Anacreation\\School\\Notification\\sSchoolNotificationServiceProvider",
+		"Anacreation\\School\\Notification\\SchoolNotificationServiceProvider",
 		"Collective\\Html\\HtmlServiceProvider"
 	  ],
 	  "aliases": {
