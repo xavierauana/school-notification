@@ -10,10 +10,11 @@ use Anacreation\School\Notification\Models\Mobile;
 
 return [
     "from"      => [
-        "sms"   => "A & A Creation",
+        "sms"   => env("SMS_FROM", "NO_FROM"),
         "email" => [
-            "name"    => "A & A Creation",
-            "address" => "info@anacreation.com",
+            "name"    => env("EMAIL_FROM_NAME", "Notification"),
+            "address" => env("EMAIL_FROM_ADDRESS",
+                "notification@anacreation.com"),
         ],
     ],
     'channels'  => [

@@ -28,8 +28,7 @@ Route::group([
     });
     Route::get("test/sms", function () {
         $sender = app()->make(\Anacreation\School\Notification\Contracts\SmsSender::class);
-        $sender->from("A & A Creation")
-               ->to("85266281556")
+        $sender->to("85266281556")
                ->message("this is a testing message")
                ->send();
 

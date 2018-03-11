@@ -105,7 +105,13 @@ class SendGrid implements EmailSender
             if ($mail) {
                 $mail->addContent($content);
             } else {
-                $mail = new SG\Mail($this->from, $this->subject, $this->to,
+                $defaultFrom = new SG\Email(config("school_notification.email.name"),
+                    config("school_notification.email.address"));
+                $from = $this->from ?? $defaultFrom;
+                $mail = new SG\Mail(
+                    $from,
+                    $this->subject,
+                    $this->to,
                     $content);
             }
         }
