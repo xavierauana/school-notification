@@ -53,7 +53,7 @@ class Nexmo implements SmsSender
         $data = [
             'to'   => $this->to,
             'text' => $this->message,
-            'from' => $this->from ?? "NO_FROM"
+            'from' => $this->from ?? config("school_notification.from.sms")
         ];
         $response = $this->client->message()->send($data);
 
